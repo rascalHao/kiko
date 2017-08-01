@@ -1,6 +1,6 @@
 <template>
-  <div v-if="isShow" id="kiko_tool_tip" class="kiko-tool-tip" :class="{'left': direction === 'left', 'right': direction === 'right', 'top': direction === 'top', 'bottom': direction === 'bottom'}" :style="{'background-color': background}">
-    <div class="content">{{content}}</div>
+  <div v-if="isShow" id="kiko_tool_tip" class="kiko-tool-tip" :class="{'left': direction === 'left', 'right': direction === 'right', 'top': direction === 'top', 'bottom': direction === 'bottom'}" :style="{'background-color': background, 'color': color}">
+    {{content}}
     <div class="arrow" :style="arrowStyleObject"></div>
   </div>
 </template>
@@ -15,6 +15,7 @@
         content: '',
         direction: 'right',
         background: 'red',
+        color: '#fff',
         arrowStyleObject: ''
       }
     },
@@ -30,7 +31,6 @@
     },
     methods: {
       initColor () {
-        console.log(this.direction)
         switch (this.direction.toLowerCase()) {
           case 'left':
             this.arrowStyleObject = {
@@ -73,8 +73,8 @@
     padding: 10px 10px;
     border-radius: 5px;
     color: #fff;
-    white-space: normal;
-    word-wrap: break-word;
+    white-space: nowrap;
+/*    word-wrap: break-word;*/
     z-index: 99999999
   }
   .kiko-tool-tip.left {
