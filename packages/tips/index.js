@@ -3,22 +3,22 @@ import ToolTip from './src/main.vue'
 
 ToolTip.installToolTip = function(event, opt) {
 
-  let options = opt
+  var options = opt
 
-  let rect = {};
-  ['top', 'left'].forEach(property => {
-    let scroll = property === 'top' ? 'scrollTop' : 'scrollLeft'
+  var rect = {};
+  ['top', 'left'].forEach(function(property) {
+    var scroll = property === 'top' ? 'scrollTop' : 'scrollLeft'
     rect[property] = event.target.getBoundingClientRect()[property] +
       document.body[scroll] +
       document.documentElement[scroll]
   });
-  ['height', 'width'].forEach(property => {
+  ['height', 'width'].forEach(function(property) {
     rect[property] = event.target.getBoundingClientRect()[property]
   });
   options.rect = rect
-  let toolTip = Vue.extend(ToolTip)
+  var toolTip = Vue.extend(ToolTip)
 
-  let component = new toolTip({
+  var component = new toolTip({
     data: options
   }).$mount()
   event.target.appendChild(component.$el)

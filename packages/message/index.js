@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Message from './src/main.vue'
 
-Message.installMessage = (options) => {
+Message.installMessage = function(options) {
   if (options === undefined || options === null) {
     options = {
       message: ''
@@ -11,9 +11,9 @@ Message.installMessage = (options) => {
       message: options
     }
   }
-  let message = Vue.extend(Message)
+  var message = Vue.extend(Message)
 
-  let component = new message({
+  var component = new message({
     data: options
   }).$mount()
   document.querySelector('body').appendChild(component.$el)
