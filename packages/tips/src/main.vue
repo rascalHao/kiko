@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isShow" id="kiko_tool_tip" class="kiko-tool-tip" :class="{'left': direction === 'left', 'right': direction === 'right', 'top': direction === 'top', 'bottom': direction === 'bottom'}" :style="{'background-color': background, 'color': color}">
+  <div v-if="isShow" id="kiko_tool_tip" class="kiko-tool-tip" :class="{'left': direction === 'left', 'right': direction === 'right', 'top': direction === 'top', 'bottom': direction === 'bottom'}" :style="{'background-color': background, 'color': color, 'top': top, 'left': left}">
     {{content}}
     <div class="arrow" :style="arrowStyleObject"></div>
   </div>
@@ -23,6 +23,32 @@
       let node = document.querySelector('#kiko_tool_tip')
       if (node && node.parentNode) {
         node.parentNode.removeChild(node)
+      }
+    },
+    computed: {
+      top () {
+        switch (this.direction) {
+          case 'top':
+            return (this.rect.top - 12) + 'px'
+          case 'bottom':
+            return (this.rect.top + 12) + 'px'
+          case 'left':
+            return (this.rect.top + this.rect.height / 2) + 'px'
+          case 'right':
+            return (this.rect.top + this.rect.height / 2) + 'px'
+        }
+      },
+      left () {
+        switch (this.direction) {
+          case 'top':
+            return (this.rect.left + this.rect.width / 2) + 'px'
+          case 'bottom':
+            return (this.rect.left + this.rect.width / 2) + 'px'
+          case 'left':
+            return (this.rect.left - 12) + 'px'
+          case 'right':
+            return (this.rect.left + this.rect.width + 12) + 'px'
+        }
       }
     },
     mounted () {
@@ -69,6 +95,7 @@
   .kiko-tool-tip {
     display: block;
     position: absolute;
+    position: fixed;
     background-color: #3695CC;
     padding: 10px 10px;
     border-radius: 5px;
@@ -78,23 +105,15 @@
     z-index: 99999999
   }
   .kiko-tool-tip.left {
-    top: 50%;
-    left: -10px;
     transform: translate(-100%, -50%);
   }
   .kiko-tool-tip.right {
-    top: 50%;
-    right: -10px;
-    transform: translate(100%, -50%);
+    transform: translate(0, -50%);
   }
   .kiko-tool-tip.top {
-    top: -10px;
-    left: 50%;
     transform: translate(-50%, -100%);
   }
   .kiko-tool-tip.bottom {
-    bottom: -10px;
-    left: 50%;
     transform: translate(-50%, 100%);
   }
   .kiko-tool-tip.right .arrow {
