@@ -2,6 +2,17 @@
 
 > 一个基于vue2.0的弹窗组件(PC)
 
+## Installation
+### You can install it via NPM.
+
+```
+  npm i kiko-rascalhao -S
+
+  import Kiko from 'kiko-rascalhao'
+
+  Vue.use(Kiko)
+```
+
 ## Usage
 
 ### Message
