@@ -2,7 +2,7 @@
 
 > 一个基于vue2.0的弹窗组件(PC)
 
-![](https://s3.amazonaws.com/f.cl.ly/items/211R3u2S271D322u2b2u/introduction.gif?AWSAccessKeyId=AKIAJEFUZRCWSLB2QA5Q&Expires=1502188320&Signature=Wvy0RhvqvSb7akBUFi4XTfrNzsI=&X-CloudApp-Visitor-Id=2811503)
+![](https://dr5mo5s7lqrtc.cloudfront.net/items/211R3u2S271D322u2b2u/introduction.gif?X-CloudApp-Visitor-Id=6f7dbfc2165658575196df8d07c08cc0&v=7c11ce67)
 
 ## Installation
 ### You can install it via NPM.
