@@ -2,7 +2,7 @@
 
 > 一个基于vue2.0的弹窗组件(PC)
 
-![](./introduction.gif)
+![](https://cl.ly/0c1T012p3C0F)
 
 ## Installation
 ### You can install it via NPM.
