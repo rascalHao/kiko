@@ -77,8 +77,8 @@ eg:
   <kiko-confirm width="500px" title="信息" :visible.sync="confirmVisible" :close-visible="true">
     <h1>谁的青春不迷茫</h1>
     <div class="kiko-footer" slot="footer">
-      <a href="javscript:void(0)" class="kiko-btn make-sure" @click="confirmMakeSure">确定</a>
-      <a href="javscript:void(0)" class="kiko-btn cancel" @click="confirmVisible = false">取消</a>
+      <a href="javascript:void(0)" class="kiko-btn make-sure" @click="confirmMakeSure">确定</a>
+      <a href="javascript:void(0)" class="kiko-btn cancel" @click="confirmVisible = false">取消</a>
     </div>
   </kiko-confirm>
 ```
